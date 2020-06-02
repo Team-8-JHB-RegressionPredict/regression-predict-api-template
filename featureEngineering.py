@@ -10,7 +10,7 @@ def preProc(feature_vector_df):
 
 
 
-
+    ##### EXAMPLE INPUT ######
 #     feature_vector_df = pd.DataFrame(['Order_No_21660', 'User_Id_1329', 'Bike', 3, 'Business', 31, 5, '12:16:49 PM', 31, 5, '12:22:48 PM', 31, 5, '12:23:47 PM',
 #                          31, 5, '12:38:24 PM', 4, 21.8, np.nan, -1.2795183, 36.8238089, -1.273056, 36.811298, 'Rider_Id_812', 4402, 1090, 14.3, 1301])
 #     feature_vector_df = feature_vector_df.T
@@ -186,17 +186,18 @@ def preProc(feature_vector_df):
 
 
     predictors = ['Distance (KM)',
+                  'rider_id_bins',
                   'No_of_Ratings',
                   'No_Of_Orders',
-                  'rider_id_bins',
-                  'rider_speed_slow',
-                  'rider_speed_reasonable',
                   'Time from Arrival at Pickup to Actual Pickup',
                   'Time from Confirmation to Arrival at Pickup',
                   'Pickup_hour',
                   'add_hour_minute',
-                  'sin_pickup_time'
+                  'sin_pickup_time',
+                  'rider_speed_reasonable',
+                  'rider_speed_slow'
                   ]
+                  
 
     predictor_vector = feature_vector_df.loc[:, predictors]
     return predictor_vector
