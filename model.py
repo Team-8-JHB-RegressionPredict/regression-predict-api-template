@@ -59,8 +59,10 @@ def _preprocess_data(data):
     # ---------------------------------------------------------------
 
     # ----------- Replace this code with your own preprocessing steps --------
-    predict_vector = feature_vector_df[['Pickup Lat','Pickup Long',
-                                        'Destination Lat','Destination Long']]
+    from featureEngineering import preProc
+    predict_vector = preProc(feature_vector_df)
+
+
     # ------------------------------------------------------------------------
 
     return predict_vector
